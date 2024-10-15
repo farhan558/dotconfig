@@ -1,0 +1,248 @@
+{
+  "layer": "bottom",
+  "position": "top",
+
+  // Module Position
+  "modules-left": ["custom/apps", "hyprland/workspaces", "group/favs", "custom/sep", "hyprland/submap", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": [
+    "mpris",
+    "custom/pacman",
+    "upower",
+    "clock",
+    "custom/notification",
+    "group/otray"
+  ],
+
+  //"width": 1100,
+  //"height": 30,
+
+  // Margin
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "reload_style_on_change": true,
+
+  // Hyprland
+  "hyprland/submap": {
+    "format": "{}",
+    "max-length": 8,
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "<span rise='-13pt'>{name}</span>",
+    "format-icons": {
+      "1": "a",
+      "2": "b",
+      "3": "c",
+      "4": "d",
+      "5": "e"
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "rewrite": {
+      "Mozilla Firefox": "Firefox",
+      "Home": "File Manager",
+      "Spotify Free": "Spotify",
+      "Code - OSS": "Code"
+    },
+    "icon": false,
+    "icon-size": 16,
+    "max-length": 30,
+    "separate-outputs": true
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}  {name}",
+    "icon-size": 16,
+    "icon-theme": "Papirus-Dark",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+
+  // Built-in Modules
+  "clock": {
+    "format": "{:%a, %d/%m\n%I:%M %p}",
+    "on-click": "gnome-calendar",
+    "tooltip": false
+  }, 
+
+  "upower": {
+    "icon-size": 13,
+    "format": " {percentage}",
+    "hide-if-empty": true,
+    "tooltip": true,
+    "tooltip-spacing": 20,
+    "show-icon": false
+  },
+
+  "mpris": {
+    "player": "spotify",
+    "ignored-players": ["firefox"],
+    "format": "<span size='x-large' rise='-2pt'>{player_icon}</span> {title}",
+    "format-paused": "<span size='x-large' rise='-2pt' color=\"#94e2d5\">{player_icon}</span> {title}",
+    "player-icons": {
+      "default": "󰎇"
+    },
+    "status-icons": {
+      "paused": "󰎇"
+    },
+    "max-length": 20,
+    "tooltip-format": "{artist}"
+  },
+
+  // oTray
+  "group/otray": {
+    "orientation": "inherit",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/icon",
+      "tray",
+      "idle_inhibitor",
+      "custom/clip",
+      "custom/color",
+      "custom/screenshot",
+      "custom/power"
+    ]
+  },
+
+  "custom/icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 7,
+    "reverse-direction": true
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "custom/color": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "hyprpicker -a"
+  },
+
+  "custom/screenshot": {
+    "format": "󰄄",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/screenshot s"
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "nwg-bar -i 64 -p right -mr 20"
+  },
+
+  "custom/clip": {
+    "format": "󱉬",
+    "tooltip": false,
+    "on-click": "rofi -modi clipboard:~/.config/hypr/scripts/cliphist -show clipboard -show-icons"
+  },
+
+  // Custom Modules
+  "group/favs": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/web",
+      "custom/files",
+      "custom/term",
+      "custom/music"
+    ]
+  },
+  "custom/web": {
+    "format": "󰖟",
+    "tooltip": false,
+    "on-click": "firefox"
+  },
+
+  "custom/files": {
+    "format": "󰉋",
+    "tooltip": false,
+    "on-click": "nemo"
+  },
+  "custom/term": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "kitty"
+  },
+
+  "custom/music": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "com.github.neithern.g4music"
+  },
+ 
+  "custom/sep": {
+    "format": "",
+    "tooltip": false
+  },
+
+
+
+  "custom/apps": {
+    "format": "  arch",
+    "tooltip": false,
+    "on-click": "pkill rofi || rofi -show drun",
+    "escape": true
+  },
+  "custom/pacman": {
+    "format": "󰊠  {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty -o remember_window_size=no -o initial_window_width=82c -o initial_window_height=24c --class update yay; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰍥",
+      "none": "󰍥",
+      "dnd-notification": "󱙎",
+      "dnd-none": "󱙎",
+      "inhibited-notification": "󰍥",
+      "inhibited-none": "󰍥",
+      "dnd-inhibited-notification": "󱙎",
+      "dnd-inhibited-none": "󱙎"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}

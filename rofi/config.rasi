@@ -1,0 +1,131 @@
+* {
+    font: "Rubik Medium 9.5";
+    bg: #000000;
+    fg: #ffffff;
+    sel: #141414;
+}
+
+configuration {
+    modi: "drun,run,filebrowser";
+    display-drun: "apps";
+	display-run: "run";
+	display-window: "window";
+	display-filebrowser: "files";
+    show-icons: true;
+	drun-display-format: "{name}\n[<span weight='Medium' color='grey' size='small'>{generic}</span>]";
+}
+
+window {
+    background-color: @bg;
+    location: 1;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px;
+    border-color: #111;
+}
+
+inputbar {
+    font: "Rubik 20.5";
+    border-radius: 5px;
+    padding: 8px;
+    spacing: 10px;
+    children: [ icon-search, entry, mode-switcher ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 32px;
+    color: @fg;
+}
+
+icon-search, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font: inherit;
+    color: @fg;
+    placeholder: "Search";
+    placeholder-color: grey;
+
+}
+textbox {
+    padding: 0px 10px;
+}
+
+listview {
+    lines: 5;
+    columns: 2;
+    scrollbar:  false;
+    fixed-height: true;
+    border: none;
+}
+
+
+element {
+    enabled: true;
+    padding: 6px 10px;
+    spacing: 0;
+    background: transparent;
+    color: @fg;
+    border-radius: 5px;
+}
+element-icon {
+    background: transparent;
+    text-color: inherit;
+    size: 32px;
+    cursor: inherit;
+}
+element-text {
+    background: transparent;
+    text-color: inherit;
+    padding: 0px 10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+element selected.normal {
+    background-color: @sel;
+    text-color: @fg;
+}
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+mode-switcher{
+    enabled: true;
+    background-color: #141414;
+    border-radius: 6px;
+}
+
+button {
+    width: 4%;
+    font: "Rubik Medium 9.5";
+    border-radius: 6px;
+    padding: 5px;
+    text-color: white;
+    cursor:  pointer;
+}
+button selected {
+    text-color:  black;
+    border-radius: 6px;
+    background-color: #8A8A8A;
+}
+
+error-message {
+    padding:                     20px;
+    background-color:            black;
+    text-color:                  white;
+}
+textbox {
+    padding:                     5px;
+    border-radius:               0px;
+    text-color:                  white;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    border: none;
+}

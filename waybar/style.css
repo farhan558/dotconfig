@@ -1,0 +1,256 @@
+@import "colors.css";
+
+* {
+    border-radius: 5px;
+    font-family: "Rubik", "monospace";
+}
+
+window#waybar {
+    background: @base;
+    color: @text;
+    border-radius: 0px;
+    font-weight: 500;
+}
+
+tooltip {
+    background: @base;
+    border-radius: 10px;
+}
+tooltip label {
+    color: @text;
+    font-weight: 500;
+}
+
+#window {
+    font-weight: bold;
+    color: @surface;
+    margin: 8px 0px;
+    border-radius: 5px;
+    padding: 0px 8px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#taskbar {
+    margin: 8px 8px 8px 0px;
+}
+#taskbar button {
+    border-radius: 5px;
+    padding: 0px 8px;
+    margin-right: 5px;
+    color: @text;
+    font-weight: bolder;
+}
+#taskbar button.active {
+    background: @opacity;
+}
+
+#submap {
+    font-size: 13pt;
+    color: @surface;
+}
+
+#workspaces {
+    padding: 0px;
+    margin: 8px;
+    background: @opacity;
+}
+#workspaces button {
+    padding: 0px 5px;
+    color: @text;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+#workspaces button:hover {
+    background: @surface;
+    color: @base;
+}
+
+#workspaces button.empty {
+    color: @surface;
+}
+#workspaces button.active {
+    background: @green;
+}
+#workspaces button.active label {
+    color: @base;
+}
+
+/* Universal */
+#tray,
+#submap,
+#custom-pacman,
+#custom-notification,
+#upower {
+    padding: 0px 6px;
+    margin: 8px 8px 8px 0px;
+}
+
+/* Group */
+#custom-icon {
+    color: @sky;
+    font-size: 16pt;
+    margin-right: 8px;
+}
+
+#idle_inhibitor {
+    font-size: 16pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#idle_inhibitor:hover {
+    color: @surface;
+}
+
+#custom-power {
+    font-size: 12pt;
+    color: @red;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#custom-power:hover {
+    color: @surface;
+}
+
+#custom-color {
+    font-size: 11pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#custom-color:hover {
+    color: @surface;
+}
+
+#custom-screenshot {
+    font-size: 14pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#custom-screenshot:hover {
+    color: @surface;
+}
+
+#custom-clip {
+    font-size: 13pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+#custom-clip:hover {
+    color: @surface;
+}
+
+#tray {
+    margin: 8px 8px 8px 2px;
+    background: @opacity;
+    padding: 0px 8px;
+}
+
+/* Mpris */
+
+#mpris {
+    background: @opacity;
+    padding: 0px 8px;
+    margin: 7px 8px;
+}
+#mpris.paused {
+    background: @opacity;
+}
+#mpris.playing {
+    background: linear-gradient(90deg,#fc8669, @orange);
+    color: @base;
+}
+
+/* Battery */
+#upower {
+    color: @green;
+}
+#upower:hover {
+    background: @green;
+    color: @base;
+}
+#upower.charging {
+    background: @green;
+    color: @base;
+}
+
+/* Clock */
+#clock {
+    color: @text;
+    font-weight: bold;
+    padding: 0px 5px 0px 0px;
+    margin-left: 2px;
+}
+#clock:hover {
+    color: @surface;
+}
+
+/* Updates */
+#custom-pacman {
+    color: @sky;
+}
+#custom-pacman:hover {
+    background: @sky;
+    color: @base;
+}
+
+/* Notifications */
+#custom-notification {
+    font-size: 13pt;
+    font-weight: 500;
+    color: @text;
+    margin-right: 10px;
+}
+#custom-notification:hover {
+    color: @surface;
+}
+
+/* Application */
+#custom-apps {
+    font-size: 14pt;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    padding: 0px 5px;
+    color: @surface;
+}
+#custom-apps:hover {
+    color: @text;
+}
+
+#custom-web {
+    font-size: 16pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#custom-web:hover,
+#custom-files:hover,
+#custom-music:hover,
+#custom-term:hover {
+    color: @surface;
+}
+
+#custom-files {
+    font-size: 16pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#custom-music {
+    font-size: 12pt;
+    margin-right: 10px;
+    margin-left: 5px;
+} 
+#custom-term {
+    font-size: 12pt;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#custom-sep {
+    font-size: 17pt;
+    color: @teal;
+    margin: 0px 0px 0px 8px;
+}
